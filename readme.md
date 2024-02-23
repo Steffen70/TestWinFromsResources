@@ -31,7 +31,7 @@ These scripts are triggered automatically as part of the MSBuild process, as spe
 These scripts allow us to replace the default software icons with customer-specific icons. The icons are stored in the `Resources` directory and are embedded into the assembly as resources.
 This complicated process is necessary to ensure we can access the icons easily in our dotnet-core backend (without DevExpress references) and in our Forms frontend (with DevExpress references).
 
-## Known Issue & Solution
+## Known Issue
 
 ### Issue Description
 
