@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="8.0.2" />
+		<PackageReference Include="System.CodeDom" Version="8.0.0" PrivateAssets="all" />
+	</ItemGroup>
+
+	<Target Name="GenerateResx" AfterTargets="Clean">
+		<Exec Command="powershell -ExecutionPolicy Bypass -File $(MSBuildProjectDirectory)\..\scripts\GenerateResx.ps1 -resourceDir Resources" />
+		<Exec Command="pwsh -ExecutionPolicy Bypass -File $(MSBuildProjectDirectory)\..\scripts\GenerateResxDesigner.ps1 -projectFile $(MSBuildProjectFile) -baseNamespace $(AssemblyName)" />
+	</Target>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>true</DesignTime>
+			<AutoGen>false</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>
