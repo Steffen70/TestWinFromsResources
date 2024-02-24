@@ -33,11 +33,11 @@
             // 
             // button1
             // 
+            button1.Image = Properties.Resources.icons8_idea_48;
             button1.Location = new Point(267, 135);
             button1.Name = "button1";
             button1.Size = new Size(142, 135);
             button1.TabIndex = 0;
-            button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
             // Form1

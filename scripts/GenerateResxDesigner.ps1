@@ -11,6 +11,8 @@ $codeDomVersion = $versions[$codeDom]
 
 # Define paths
 . "$PSScriptRoot\GetNugetResourcePath.ps1"
+# default target framework is netstandard2.0
+# netstandard2.0 is supported by .Net Core 2.0+ and .Net Framework 4.6.1
 $codeDomPath = Get-NugetResourcePath -assemblyName $codeDom -version $codeDomVersion
 
 Add-Type -AssemblyName "System"

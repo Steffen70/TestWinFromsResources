@@ -6,18 +6,14 @@ This project involves a custom build process where a resource designer is genera
 
 ## Prerequisites
 
-- **PowerShell Version**: Ensure you have PowerShell version 7.4.1 installed to match the .NET 8.0 target version.
 - **.NET Version**: This project targets .NET 8.0.
+- **PowerShell** default Windows PowerShell 5.1 framework version is used to generate resources and resource designer files. (Visual Studio 2022 does not support preview of resx files targeting System.Drawing.Common)
 
 ## Installation
 
-1. **Install PowerShell 7.4.1**:
-    - Download and install PowerShell 7.4.1
-    - Make sure it is added to your system's PATH.
-
-2. **NuGet Cache Location**:
-    - Confirm that your NuGet cache is located at the default location: `%userdir%\.nuget\packages\`.
-    - This is crucial for PowerShell to load project's private assets from the NuGet cache, especially `System.CodeDom`.
+**NuGet Cache Location**:
+- Confirm that your NuGet cache is located at the default location: `%UserProfile%\.nuget\packages\`.
+- This is crucial for PowerShell to load project's private assets from the NuGet cache, especially `System.CodeDom`.
 
 ## Build Process
 

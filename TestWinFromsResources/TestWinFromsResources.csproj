@@ -10,12 +10,12 @@
 
 	<ItemGroup>
 		<PackageReference Include="System.Drawing.Common" Version="8.0.2" />
-		<PackageReference Include="System.CodeDom" Version="8.0.0" PrivateAssets="all" />
+		<PackageReference Include="System.CodeDom" Version="8.0.0" PrivateAssets="all" ExcludeAssets="runtime" />
 	</ItemGroup>
 
 	<Target Name="GenerateResx" AfterTargets="Clean">
 		<Exec Command="powershell -ExecutionPolicy Bypass -File $(MSBuildProjectDirectory)\..\scripts\GenerateResx.ps1 -resourceDir Resources" />
-		<Exec Command="pwsh -ExecutionPolicy Bypass -File $(MSBuildProjectDirectory)\..\scripts\GenerateResxDesigner.ps1 -projectFile $(MSBuildProjectFile) -baseNamespace $(AssemblyName)" />
+		<Exec Command="powershell -ExecutionPolicy Bypass -File $(MSBuildProjectDirectory)\..\scripts\GenerateResxDesigner.ps1 -projectFile $(MSBuildProjectFile) -baseNamespace $(AssemblyName)" />
 	</Target>
 
 	<ItemGroup>
