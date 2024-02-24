@@ -27,7 +27,7 @@ $resxFile = Resolve-Path '.\Properties\Resources.resx'
 
 Write-Host "Generating designer file for $resxFile"
 
-if($null -eq $baseNamespace) {
+if([string]::IsNullOrEmpty($baseNamespace)) {
     $projectName = [System.IO.Path]::GetFileNameWithoutExtension($projectFile)
     $baseNamespace = $projectName
 }
